@@ -12,6 +12,7 @@ public class SeanceFormationDto {
     private Long Id;
     private Integer dureeEffective;
     private Boolean valide;
+    private Boolean estEffectuee;
 
     @Lob
     @Column(name="CONTENT", length=512)
