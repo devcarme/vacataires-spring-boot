@@ -18,4 +18,15 @@ public class SeanceFormation {
     @Column(name="CONTENT", length=512)
     private String commentaire;
 
+    @ManyToOne
+    @JoinColumn(name = "creneau_id")
+    private Creneau creneau;
+
+    public Creneau getCreneau() {
+        return creneau;
+    }
+
+    public void setCreneau(Creneau creneau) {
+        this.creneau = creneau;
+    }
 }

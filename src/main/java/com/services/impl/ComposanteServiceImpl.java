@@ -34,7 +34,7 @@ public class ComposanteServiceImpl implements ComposanteService {
     private ComposanteDto composanteEntityToDto(Composante composante) {
         ComposanteDto composanteDto = new ComposanteDto();
         composanteDto.setId(composante.getId());
-        composante.setNomComposante(composanteDto.getNomComposante());
+        composanteDto.setNomComposante(composanteDto.getNomComposante());
         return composanteDto;
     }
 

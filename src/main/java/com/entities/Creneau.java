@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,7 +18,22 @@ public class Creneau {
     private LocalDateTime dateHeure;
     private Integer duree;
 
-    @Enumerated(EnumType.ORDINAL)
-    private TypeCreneau type;
+//    @Enumerated(EnumType.ORDINAL)
+//    private TypeCreneau type;
+    private String type;
 
+    @OneToMany(mappedBy = "creneau")
+    private List<SeanceFormation> seancesFormations;
+
+    @ManyToOne
+    @JoinColumn(name = "cours_id")
+    private Cours cours;
+
+    public Cours getCours() {
+        return cours;
+    }
+
+    public void setCours(Cours cours) {
+        this.cours = cours;
+    }
 }

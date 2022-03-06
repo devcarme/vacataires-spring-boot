@@ -2,6 +2,7 @@ package com.services.impl;
 
 import com.dtos.CreneauDto;
 import com.entities.Creneau;
+import com.entities.TypeCreneau;
 import com.repositories.CreneauRepository;
 import com.services.CreneauService;
 import org.springframework.stereotype.Service;
@@ -35,8 +36,10 @@ public class CreneauServiceImpl implements CreneauService {
      */
     private CreneauDto creneauEntityToDto(Creneau creneau) {
         CreneauDto creneauDto = new CreneauDto();
-        creneauDto.setId(creneau.getId());
-        creneauDto.setIntitule(creneau.getIntitule());
+        creneauDto.setDateHeure(creneauDto.getDateHeure());
+        creneauDto.setDuree(creneauDto.getDuree());
+        creneauDto.setType(creneauDto.getType());
+        creneauDto.setId(creneauDto.getId());
         return creneauDto;
     }
 

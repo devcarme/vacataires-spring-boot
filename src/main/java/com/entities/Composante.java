@@ -2,10 +2,8 @@ package com.entities;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -14,5 +12,11 @@ public class Composante {
 
     private Long Id;
     private String nomComposante;
+
+    @OneToMany(mappedBy = "composante")
+    private List<FiliereLangue> filiereLangues;
+
+    @OneToMany(mappedBy = "composante")
+    private List<Responsable> responsables;
 
 }

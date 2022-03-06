@@ -15,9 +15,11 @@ public class CreneauDto {
 
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime dateHeure;
+
     private Integer duree;
 
-    @Enumerated(EnumType.ORDINAL)
-    private TypeCreneau type;
+//    @Enumerated(EnumType.ORDINAL)
+//    private TypeCreneau type;
 
+    private String type;
 }
