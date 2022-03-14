@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Entity
 @Data
 public class SeanceFormationDto {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
