@@ -28,4 +28,3 @@
 
 ## Documentation jointures ##
 `https://www.baeldung.com/jpa-join-types`
-
