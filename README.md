@@ -3,6 +3,7 @@
 ## Swagger ##
 `http://localhost:8080/swagger-ui/index.html#`
 
+
 ## Postman tests JSON format ##
 
 `https://www.getpostman.com/collections/37756a7ab04f6e906496`
@@ -14,6 +15,9 @@
 `cd vacataires-spring-boot`
 `mvn clean package`
 `mvn spring-boot:run`
+
+## Accès à la base de données peuplée au démarrage de l'application ##
+`http://localhost:8080/h2-console`
 
 ## Cahier des charges ##
 `https://traveling-seaplane-72f.notion.site/TP-API-M1-INFORMATIQUE-SPRING-BOOT-5b267fc667374ad3a5f5a528e7b2ff1c`
