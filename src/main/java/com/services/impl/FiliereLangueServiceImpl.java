@@ -20,6 +20,8 @@ public class FiliereLangueServiceImpl implements FiliereLangueService {
     }
     /**
      * Map filiereLangue dto to filiereLangue entity
+     * @param filiereLangueDto
+     * return FiliereLangue
      */
     private FiliereLangue filiereLangueDtoToEntity(FiliereLangueDto filiereLangueDto) {
         FiliereLangue filiereLangue = new FiliereLangue();
@@ -31,6 +33,8 @@ public class FiliereLangueServiceImpl implements FiliereLangueService {
 
     /**
      * Map filiereLangue entity to filiereLangue dto
+     * @param filiereLangue
+     * return filiereLangueDto
      */
     private FiliereLangueDto filiereLangueEntityToDto(FiliereLangue filiereLangue) {
         FiliereLangueDto filiereLangueDto = new FiliereLangueDto();
@@ -39,6 +43,11 @@ public class FiliereLangueServiceImpl implements FiliereLangueService {
         return filiereLangueDto;
     }
 
+    /**
+     * Save filiereLangue in database
+     * @param filiereLangueDto
+     * @return FiliereLangueDto
+     */
     @Override
     public FiliereLangueDto saveFiliereLangue(FiliereLangueDto filiereLangueDto) {
         // Converts the dto to the dog entity
@@ -49,18 +58,32 @@ public class FiliereLangueServiceImpl implements FiliereLangueService {
         return filiereLangueEntityToDto(filiereLangue);
     }
 
+    /**
+     * Get filiereLangue by id
+     * @param filiereLangueId
+     * @return filiereLangueDto
+     */
     @Override
     public FiliereLangueDto getFiliereLangueById(Long filiereLangueId) {
         FiliereLangue filiereLangue = filiereLangueRepository.findById(filiereLangueId).orElseThrow(() -> new EntityNotFoundException("FiliereLangue not found"));
         return filiereLangueEntityToDto(filiereLangue);
     }
 
+    /**
+     * Delete filiereLangue by id
+     * @param filiereLangueId
+     * @return true
+     */
     @Override
     public boolean deleteFiliereLangue(Long filiereLangueId) {
         filiereLangueRepository.deleteById(filiereLangueId);
         return true;
     }
 
+    /**
+     * Get all filiereLangue
+     * @return List<FiliereLangueDto>
+     */
     @Override
     public List<FiliereLangueDto> getAllFiliereLangue() {
         List<FiliereLangueDto> filiereLangueDtos = new ArrayList<>();

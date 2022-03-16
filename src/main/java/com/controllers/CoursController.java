@@ -1,10 +1,7 @@
 package com.controllers;
 
 import com.dtos.CoursDto;
-import com.entities.Cours;
 import com.services.CoursService;
-import com.services.impl.CoursServiceImpl;
-import com.services.impl.DogServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

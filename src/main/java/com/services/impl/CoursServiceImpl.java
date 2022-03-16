@@ -1,11 +1,8 @@
 package com.services.impl;
 
 import com.dtos.CoursDto;
-import com.dtos.DogDto;
 import com.entities.Cours;
-import com.entities.Dog;
 import com.repositories.CoursRepository;
-import com.repositories.DogRepository;
 import com.services.CoursService;
 import org.springframework.stereotype.Service;
 
@@ -41,6 +38,11 @@ public class CoursServiceImpl implements CoursService {
         return coursDto;
     }
 
+    /**
+     * Save cours in database
+     * @param coursDto
+     * @return CoursDto
+     */
     @Override
     public CoursDto saveCours(CoursDto coursDto) {
         // Converts the dto to the dog entity
@@ -51,18 +53,32 @@ public class CoursServiceImpl implements CoursService {
         return coursEntityToDto(cours);
     }
 
+    /**
+     * Get one cours by id
+     * @param coursId
+     * @return CoursDto
+     */
     @Override
     public CoursDto getCoursById(Long coursId) {
         Cours cours = coursRepository.findById(coursId).orElseThrow(() -> new EntityNotFoundException("Cours not found"));
         return coursEntityToDto(cours);
     }
 
+    /**
+     * Delete one cours by id
+     * @param coursId
+     * @return true
+     */
     @Override
     public boolean deleteCours(Long coursId) {
         coursRepository.deleteById(coursId);
         return true;
     }
 
+    /**
+     * Get all cours
+     * @return CoursDto
+     */
     @Override
     public List<CoursDto> getAllCours() {
         List<CoursDto> coursDtos = new ArrayList<>();

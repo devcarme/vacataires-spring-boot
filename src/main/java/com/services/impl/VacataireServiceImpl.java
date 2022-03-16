@@ -20,6 +20,8 @@ public class VacataireServiceImpl implements VacataireService {
     }
     /**
      * Map vacataire dto to vacataire entity
+     * @param vacataireDto
+     * @return Vacataire entity
      */
     private Vacataire vacataireDtoToEntity(VacataireDto vacataireDto) {
         Vacataire vacataire = new Vacataire();
@@ -34,6 +36,8 @@ public class VacataireServiceImpl implements VacataireService {
 
     /**
      * Map vacataire entity to vacataire dto
+     * @param vacataire
+     * @return VacataireDto
      */
     private VacataireDto vacataireEntityToDto(Vacataire vacataire) {
         VacataireDto vacataireDto = new VacataireDto();
@@ -47,6 +51,11 @@ public class VacataireServiceImpl implements VacataireService {
         return vacataireDto;
     }
 
+    /**
+     * Save vacataire in database
+     * @param vacataireDto
+     * @return VacataireDto
+     */
     @Override
     public VacataireDto saveVacataire(VacataireDto vacataireDto) {
         // Converts the dto to the dog entity
@@ -57,18 +66,30 @@ public class VacataireServiceImpl implements VacataireService {
         return vacataireEntityToDto(vacataire);
     }
 
+    /**
+     * Get Vacataire by id
+     * @return VacataireDto
+     */
     @Override
     public VacataireDto getVacataireById(Long vacataireId) {
         Vacataire vacataire = vacataireRepository.findById(vacataireId).orElseThrow(() -> new EntityNotFoundException("Vacataire not found"));
         return vacataireEntityToDto(vacataire);
     }
 
+    /**
+     * Delete vacataire by id
+     * @return true
+     */
     @Override
     public boolean deleteVacataire(Long vacataireId) {
         vacataireRepository.deleteById(vacataireId);
         return true;
     }
 
+    /**
+     * Get all vacataires
+     * @return List<VacataireDto>
+     */
     @Override
     public List<VacataireDto> getAllVacataires() {
         List<VacataireDto> vacataireDtos = new ArrayList<>();

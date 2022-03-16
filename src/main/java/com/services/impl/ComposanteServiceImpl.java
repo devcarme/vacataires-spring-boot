@@ -38,6 +38,11 @@ public class ComposanteServiceImpl implements ComposanteService {
         return composanteDto;
     }
 
+    /**
+     * Save composante in database
+     * @param composanteDto
+     * @return ComposanteDto
+     */
     @Override
     public ComposanteDto saveComposante(ComposanteDto composanteDto) {
         // Converts the dto to the dog entity
@@ -48,18 +53,32 @@ public class ComposanteServiceImpl implements ComposanteService {
         return composanteEntityToDto(composante);
     }
 
+    /**
+     * Get one composante by id
+     * @param composanteId
+     * @return ComposanteDto
+     */
     @Override
     public ComposanteDto getComposanteById(Long composanteId) {
         Composante composante = composanteRepository.findById(composanteId).orElseThrow(() -> new EntityNotFoundException("Composante not found"));
         return composanteEntityToDto(composante);
     }
 
+    /**
+     * Delete composante by id
+     * @param composanteId
+     * @return ComposanteDto
+     */
     @Override
     public boolean deleteComposante(Long composanteId) {
         composanteRepository.deleteById(composanteId);
         return true;
     }
 
+    /**
+     * Get all composantes
+     * @return List<ComposanteDto>
+     */
     @Override
     public List<ComposanteDto> getAllComposante() {
         List<ComposanteDto> composanteDtos = new ArrayList<>();

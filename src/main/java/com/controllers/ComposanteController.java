@@ -48,5 +48,6 @@ public class ComposanteController {
 	public Boolean deleteComposante(@PathVariable Long id){
 		return composanteService.deleteComposante(id);
 	}
-	
+
+
 }

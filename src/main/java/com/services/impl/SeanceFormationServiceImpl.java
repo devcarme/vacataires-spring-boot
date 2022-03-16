@@ -20,6 +20,8 @@ public class SeanceFormationServiceImpl implements SeanceFormationService {
     }
     /**
      * Map seanceFormation dto to seanceFormation entity
+     * @param seanceFormationDto
+     * @return SeanceFormation entity
      */
     private SeanceFormation seanceFormationDtoToEntity(SeanceFormationDto seanceFormationDto) {
         SeanceFormation seanceFormation = new SeanceFormation();
@@ -34,6 +36,8 @@ public class SeanceFormationServiceImpl implements SeanceFormationService {
 
     /**
      * Map seanceFormation entity to seanceFormation dto
+     * @param seanceFormation
+     * @return SeanceFormationDto
      */
     private SeanceFormationDto seanceFormationEntityToDto(SeanceFormation seanceFormation) {
         SeanceFormationDto seanceFormationDto = new SeanceFormationDto();
@@ -45,6 +49,11 @@ public class SeanceFormationServiceImpl implements SeanceFormationService {
         return seanceFormationDto;
     }
 
+    /**
+     * Save seanceFormation in database
+     * @param seanceFormationDto
+     * @return SeanceFormationDto
+     */
     @Override
     public SeanceFormationDto saveSeanceFormation(SeanceFormationDto seanceFormationDto) {
         // Converts the dto to the dog entity
@@ -55,18 +64,32 @@ public class SeanceFormationServiceImpl implements SeanceFormationService {
         return seanceFormationEntityToDto(seanceFormation);
     }
 
+    /**
+     * Get seanceFormation by id
+     * @param seanceFormationId
+     * @return SeanceFormationDto
+     */
     @Override
     public SeanceFormationDto getSeanceFormationById(Long seanceFormationId) {
         SeanceFormation seanceFormation = seanceFormationRepository.findById(seanceFormationId).orElseThrow(() -> new EntityNotFoundException("SeanceFormation not found"));
         return seanceFormationEntityToDto(seanceFormation);
     }
 
+    /**
+     * Delete seanceFormation by id
+     * @param seanceFormationId
+     * @return true
+     */
     @Override
     public boolean deleteSeanceFormation(Long seanceFormationId) {
         seanceFormationRepository.deleteById(seanceFormationId);
         return true;
     }
 
+    /**
+     * Get all seanceFormation
+     * @return List<SeanceFormationDto>
+     */
     @Override
     public List<SeanceFormationDto> getAllSeanceFormations() {
         List<SeanceFormationDto> seanceFormationDtos = new ArrayList<>();
