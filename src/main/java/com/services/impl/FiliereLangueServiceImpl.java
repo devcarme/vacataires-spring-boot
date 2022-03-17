@@ -38,8 +38,8 @@ public class FiliereLangueServiceImpl implements FiliereLangueService {
      */
     private FiliereLangueDto filiereLangueEntityToDto(FiliereLangue filiereLangue) {
         FiliereLangueDto filiereLangueDto = new FiliereLangueDto();
-        filiereLangueDto.setCodeFiliereLangue(filiereLangueDto.getCodeFiliereLangue());
-        filiereLangueDto.setNomFiliereLangue(filiereLangueDto.getNomFiliereLangue());
+        filiereLangueDto.setCodeFiliereLangue(filiereLangue.getCodeFiliereLangue());
+        filiereLangueDto.setNomFiliereLangue(filiereLangue.getNomFiliereLangue());
         return filiereLangueDto;
     }
 

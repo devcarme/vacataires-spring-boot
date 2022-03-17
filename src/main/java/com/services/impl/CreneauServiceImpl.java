@@ -40,10 +40,10 @@ public class CreneauServiceImpl implements CreneauService {
      */
     private CreneauDto creneauEntityToDto(Creneau creneau) {
         CreneauDto creneauDto = new CreneauDto();
-        creneauDto.setDateHeure(creneauDto.getDateHeure());
-        creneauDto.setDuree(creneauDto.getDuree());
-        creneauDto.setType(creneauDto.getType());
-        creneauDto.setId(creneauDto.getId());
+        creneauDto.setDateHeure(creneau.getDateHeure());
+        creneauDto.setDuree(creneau.getDuree());
+        creneauDto.setType(creneau.getType());
+        creneauDto.setId(creneau.getId());
         return creneauDto;
     }
 

@@ -42,10 +42,10 @@ public class SeanceFormationServiceImpl implements SeanceFormationService {
     private SeanceFormationDto seanceFormationEntityToDto(SeanceFormation seanceFormation) {
         SeanceFormationDto seanceFormationDto = new SeanceFormationDto();
         seanceFormationDto.setId(seanceFormation.getId());
-        seanceFormationDto.setDureeEffective(seanceFormationDto.getDureeEffective());
-        seanceFormationDto.setValide(seanceFormationDto.getValide());
-        seanceFormationDto.setCommentaire(seanceFormationDto.getCommentaire());
-        seanceFormationDto.setEstEffectuee(seanceFormationDto.getEstEffectuee());
+        seanceFormationDto.setDureeEffective(seanceFormation.getDureeEffective());
+        seanceFormationDto.setValide(seanceFormation.getValide());
+        seanceFormationDto.setCommentaire(seanceFormation.getCommentaire());
+        seanceFormationDto.setEstEffectuee(seanceFormation.getEstEffectuee());
         return seanceFormationDto;
     }
 

@@ -42,12 +42,12 @@ public class VacataireServiceImpl implements VacataireService {
     private VacataireDto vacataireEntityToDto(Vacataire vacataire) {
         VacataireDto vacataireDto = new VacataireDto();
         vacataireDto.setId(vacataire.getId());
-        vacataireDto.setLogin(vacataireDto.getLogin());
-        vacataireDto.setMotDePasse(vacataireDto.getMotDePasse());
-        vacataireDto.setNomUsuel(vacataireDto.getNomUsuel());
-        vacataireDto.setPrenom(vacataireDto.getPrenom());
-        vacataireDto.setMail(vacataireDto.getMail());
-        vacataireDto.setId(vacataireDto.getId());
+        vacataireDto.setLogin(vacataire.getLogin());
+        vacataireDto.setMotDePasse(vacataire.getMotDePasse());
+        vacataireDto.setNomUsuel(vacataire.getNomUsuel());
+        vacataireDto.setPrenom(vacataire.getPrenom());
+        vacataireDto.setMail(vacataire.getMail());
+        vacataireDto.setId(vacataire.getId());
         return vacataireDto;
     }
 
